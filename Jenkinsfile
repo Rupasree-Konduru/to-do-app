@@ -21,6 +21,7 @@ pipeline {
                     -Dsonar.projectName=to-do \
                     -Dsonar.sources=. \
                     -Dsonar.projectKey=to-do
+                    -X
                 '''
             }
         }
