@@ -1,8 +1,8 @@
 pipeline {
     agent any
    
-    environment{
-        SCANNER_HOME= tool 'sonar-scanner'
+    environment {
+        SCANNER_HOME = tool 'sonar-scanner' // Make sure this tool is configured in Jenkins
     }
 
     stages {
@@ -12,15 +12,17 @@ pipeline {
             }
         }
 
-    stage('Sonar Analysis') {
+        stage('Sonar Analysis') {
             steps {
-                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://65.0.100.22:9000 -Dsonar.login=sqp_d57becf08b0699192ea0a89aa204251261332b46 -Dsonar.projectName=to-do \
-                   -Dsonar.sources=. \
-                   -Dsonar.projectKey=to-do '''
-               }
+                sh ''' 
+                $SCANNER_HOME/bin/sonar-scanner \
+                    -Dsonar.url=http://65.0.100.22:9000 \
+                    -Dsonar.login=sqp_d57becf08b0699192ea0a89aa204251261332b46 \
+                    -Dsonar.projectName=to-do \
+                    -Dsonar.sources=. \
+                    -Dsonar.projectKey=to-do
+                '''
             }
-           
         }
-
     }
 }
