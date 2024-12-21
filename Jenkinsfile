@@ -17,7 +17,7 @@ pipeline {
                 sh ''' 
                 $SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.url=http://65.0.100.22:9000 \
-                    -Dsonar.login=sqp_d57becf08b0699192ea0a89aa204251261332b46 \
+                    -Dsonar.login=squ_36f9ce22318743243b54f16f066e6664e89fe042 \
                     -Dsonar.projectName=to-do \
                     -Dsonar.sources=. \
                     -Dsonar.projectKey=to-do
