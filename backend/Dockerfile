@@ -1,4 +1,9 @@
 FROM node:14-alpine3.12
-COPY . .
+
+WORKDIR /app
+COPY backend /app
+
+RUN npm install  # Ensure dependencies are installed
+
 EXPOSE 4000
-CMD ["node","backend/index.js"]
+CMD ["node", "index.js"]
